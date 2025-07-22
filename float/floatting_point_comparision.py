@@ -26,4 +26,3 @@
 
 def approx_equals(a, b):
     return 0.001 >= abs(a-b)
-        

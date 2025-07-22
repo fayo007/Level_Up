@@ -33,19 +33,12 @@
 # Note
 # If you find yourself writing overly complex code, you are probably on the wrong path. Your solution should only be concerned with the bit-pattern of the number, without dealing with its value.
 
+Insight :
 
+This problem helped me understand the Float data type much more deeply. I learned more about binary numbers and how float values are stored in binary — specifically how they are represented with a sign bit, exponent, and fraction part using 0s and 1s.
 
-import struct
+Through this, I also discovered Python’s special formatting technique, which is really useful when converting numbers into binary strings. One of the most important things I learned was about the struct module in Python — this module is used to convert float numbers into their binary representation. I learned how to correctly use the .pack() and .unpack() methods and give them the right format parameters.
 
-def float_to_IEEE_754(f : float) -> str:
-    
-    to_byte = struct.pack('>d',f)
-    
-    to_int = struct.unpack('>Q', to_byte)[0]
-    
-    to_binary = f"{to_int:064b}"
-    
-    return to_binary[0]+ ' ' + to_binary[1:12] + ' ' + to_binary[12:]
+As for the algorithm of the problem: I first converted the float number into bytes using struct.pack(). Then I turned those bytes into an integer using struct.unpack(), and from there, I formatted the integer into its binary form using Python string formatting. To solve the problem properly, I also needed to understand how a float is stored in memory. That’s where I learned about the concepts of sign, exponent, and fraction, and how they are used in the IEEE 754 format.
 
-
-
+Overall, this problem helped me improve my understanding of programming at a deeper level.

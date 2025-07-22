@@ -4,8 +4,6 @@ This repository contains small focused problem-solving exercises based on Python
 - int
 - float
 - str
-- bool
-- NoneType
 
 Each folder includes:
 - Real-world problems or Codewars-style tasks
